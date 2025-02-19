@@ -48,7 +48,28 @@ module "organization" {
   }
 
   custom_fields = {
-    group = "non-prod"
+    alternate_contact = jsonencode(
+      {
+        "billing"= {
+          "email-address" = "donaldjohnson93@protonmail.com",
+          "name"          = "Account Receiveable",
+          "phone-number"  = "8157618777",
+          "title"         = "Billing Department"
+        },
+        "operations"= {
+          "email-address" = "donaldjohnson93@protonmail.com",
+          "name"          = "Operations 24/7",
+          "phone-number"  = "8157618777",
+          "title"         = "DevOps Team"
+        },
+        "security"= {
+          "email-address" = "donaldjohnson93@protonmail.com",
+          "name"          = "Security Ops Center",
+          "phone-number"  = "8157618777",
+          "title"         = "SOC Team"
+        }
+      }
+    )
   }
 
   account_customizations_name = "sandbox"
